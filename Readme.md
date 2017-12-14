@@ -1,14 +1,24 @@
 This is an interview example which client would like me to create a quick crud sample demo:
 
 Here how to set up your dev env:
-1. client side:
+1. -- Postgres Database name: noteapp
+CREATE TABLE public.note
+(
+  id SERIAL,
+  title text NOT NULL,
+  created_at timestamp without time zone DEFAULT now()
+)
+ALTER TABLE public.note 
+OWNER TO admin;
+
+2. client side:
     $ cd client //( or go to client folder)
 
     $ npm install
 
     $ npm start //open url: http://localhost:3000
 
-2. server side:
+3. server side:
     $ cd sever //( or go to server folder)
 
     $ npm install
