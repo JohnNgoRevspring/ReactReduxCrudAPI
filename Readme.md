@@ -3,25 +3,37 @@ This is an interview example which client would like me to create a quick crud s
 javascript framework apply for this demo:
 + knex - http://knexjs.org/ - below is a quick overview:
     create db: bash cmd 
+    
     $yarn knex pg - download the library knex and pg
+    
     $createdb noteapp
-    $knex migrate:make note  -- this will create a file in the migration folder then update the file and run the next bash
+    
+    $knex migrate:make note  -- this will create a file in the migration folder then 
+    
+    update the file and run the next bash
     exports.up = function(knex, Promise) {
-    return knex.schema.createTable('note', (table) => {
-        table.increments();
-        table.text('title').notNullable();
-    })
+        return knex.schema.createTable('note', (table) => {
+            table.increments();
+            table.text('title').notNullable();
+        })
     };
+    
     $knex seed:make note --- make a new file to see for call note, then update the seed file and run the next 
+    
     $knex seed:run -- update the table in db 
 
     exports.down = function(knex, Promise) {
-    return knex.schema.dropTable('note');
+        return knex.schema.dropTable('note');
     };
+
     $knex migrate:latest - run the latest mirgration code 
+    
     -- then load another bash to view and manage db 
+    
     $psql noteapp - connect to the noteapp db
+    
     $\dt  -- describes all the table
+    
     $\d note -- describe table note
 
 + oxiom - http://www.axiombts.com/portfolio_entries/javascript/
@@ -31,13 +43,17 @@ javascript framework apply for this demo:
 Here how to set up your dev env:
 1. client side:
 $ cd client //( or go to client folder)
+
 $ npm install
+
 $ npm start 
 open url: http://localhost:3000
 
 2. server side:
 $ cd sever //( or go to server folder)
+
 $ npm install
+
 $ port=3020 npm start (or port=3020 nodemon)
 open url: http://localhost:3020 
 
