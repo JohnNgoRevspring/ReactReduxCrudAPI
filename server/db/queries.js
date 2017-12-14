@@ -4,7 +4,7 @@ module.exports = {
     getAll: () => {
         return knex('note').select();
     },
-    getPage:(limit,start,order) => {  //GET /notes?limit=10&start=1&order=asc
+    getPage:(limit,start,order) => {
         return knex.select('*').from('note')
                     //.where('title', 'ilike', '%'+query+'%')
                     .limit(limit)

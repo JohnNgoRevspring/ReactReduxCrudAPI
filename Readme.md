@@ -44,16 +44,16 @@ The project must meet the following requirements:
 
 [] Deploy publicly somewhere (e.g., Heroku, AWS ElasticBeanstalk, private server etc.)
 
-[] Implement a REST API for note management with the following specification:
+[x] Implement a REST API for note management with the following specification:
 
     [x] POST /notes     # Add a note
-    [] where:           # Get notes, optionally specifying GET parameters
+    [x] where:           # Get notes, optionally specifying GET parameters
         # limit - indicates the maximum number of notes to
         [x] get; if unspecified, gets all notes
         # order - specifies in which order to sort the notes
-        [] based on creation time, can be either "asc" or "desc"; if unspecified, defaults to descending
+        [x] based on creation time, can be either "asc" or "desc"; if unspecified, defaults to descending
         # start - specifies where in the sorted notes to
-        [] begin getting notes; if unspecified, defaults to 1 GET /notes?limit=10&start=1&order=asc
+        [x] begin getting notes; if unspecified, defaults to 1 GET /notes?limit=10&start=1&order=asc
 
     [x] GET /notes/:id          # View a note with a given id
     [x] PUT /notes/:id          # Update a note with a given id
@@ -102,5 +102,5 @@ Other javascript framework apply for this demo:
     >\dt  -- describes all the table
 
     >\d note -- describe table note 
-    
+
 + oxiom - http://www.axiombts.com/portfolio_entries/javascript/
