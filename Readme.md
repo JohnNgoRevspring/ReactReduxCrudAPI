@@ -68,3 +68,39 @@ to view, add, edit, and delete their own notes. This will require modifying
 the REST API to allow specifying the user (e.g., GET /notes/:id becomes
 GET /:user/notes/:id and so on). There also must be an additional route
 to authenticate the user.
+
+---------------------------------------------------------
+Other javascript framework apply for this demo:
++ knex - http://knexjs.org/ - below is a quick overview:
+    //create db: bash cmd
+
+    >yarn knex pg - download the library knex and pg
+
+    >createdb noteapp
+
+    >knex migrate:make note  -- this will create a file in the migration folder then update the file and run the next bash
+
+    exports.up = function(knex, Promise) {
+        return knex.schema.createTable('note', (table) => {
+            table.increments();
+            table.text('title').notNullable();
+        })
+    };
+
+    >knex seed:make note --- make a new file to see for call note, then update the seed file and run the next 
+
+    >knex seed:run -- update the table in db 
+
+    exports.down = function(knex, Promise) {
+        return knex.schema.dropTable('note');
+    };
+
+    >knex migrate:latest - run the latest mirgration code -- then load another bash to view and manage db 
+
+    >psql noteapp - connect to the noteapp db
+
+    >\dt  -- describes all the table
+
+    >\d note -- describe table note 
+    
++ oxiom - http://www.axiombts.com/portfolio_entries/javascript/
