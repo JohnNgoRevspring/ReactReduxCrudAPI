@@ -8,9 +8,7 @@ var methodOverride = require('method-override');
 var cors = require('cors');
 
 var index = require('./routes/index');
-var note = require('./routes/note');
 var noteAPI = require('./api/noteAPI');
-var users = require('./routes/users');
 
 var app = express();
 
@@ -38,9 +36,7 @@ app.use(cors({
   optionsSuccessStatus: 200
 }));
 app.use('/', index);
-app.use('/note', note);
 app.use('/notes', noteAPI);
-app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
