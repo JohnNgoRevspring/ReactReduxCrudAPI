@@ -2,7 +2,7 @@ This is an interview example which client would like me to create a quick crud s
 
 javascript framework apply for this demo:
 + knex - http://knexjs.org/ - below is a quick overview:
-1. create db: bash cmd 
+    create db: bash cmd 
     >yarn knex pg - download the library knex and pg
     >createdb noteapp
     >knex migrate:make note  -- this will create a file in the migration folder then update the file and run the next bash
@@ -22,16 +22,17 @@ javascript framework apply for this demo:
     -- then load another bash to view and manage db 
     >psql noteapp - connect to the noteapp db
     >\dt  -- describes all the table
-    >\d note -- describe table note 
-    + oxiom - http://www.axiombts.com/portfolio_entries/javascript/
-    + server api
+    >\d note -- describe table note
+
++ oxiom - http://www.axiombts.com/portfolio_entries/javascript/
++ server api
 
 
 Here how to set up your dev env:
 1. client side:
->cd client //( or go to client folder)
->npm install
->npm start 
+$> cd client //( or go to client folder)
+$> npm install
+$> npm start 
 open url: http://localhost:3000
 
 2. server side:
@@ -46,17 +47,29 @@ frontend and a REST API that uses a PostgreSQL database to store notes.
 The project must meet the following requirements:
 
 [x] Written in ES6 (please use Babel)
+
 [x] Use Webpack for packaging client-side code
+
 [x] Use SASS for CSS
+
 [] Use CSS animations and transitions to provide a richer user experience
+
 [x] Express.js
+
 [x] Node.js
+
 [x] Yarn
+
 [x] React
+
 [x] Redux
+
 [x] PostgreSQL
+
 [x] Use Git and BitBucket for source control
+
 [] Deploy publicly somewhere (e.g., Heroku, AWS ElasticBeanstalk, private server etc.)
+
 [] Implement a REST API for note management with the following specification:
 
     [x] POST /notes     # Add a note
@@ -75,6 +88,7 @@ The project must meet the following requirements:
     [x] React SPA
 
 Bonus
+
 [] Use Auth0 to provide authentication and restrict users to only being able
 to view, add, edit, and delete their own notes. This will require modifying
 the REST API to allow specifying the user (e.g., GET /notes/:id becomes
