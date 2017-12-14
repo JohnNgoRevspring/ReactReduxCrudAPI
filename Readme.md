@@ -1,7 +1,9 @@
 This is an interview example which client would like me to create a quick crud sample demo:
 
 Here how to set up your dev env:
-1. -- Postgres Database name: noteapp
+
+1. Postgres Database name: noteapp
+
 CREATE TABLE public.note
 (
   id SERIAL,
