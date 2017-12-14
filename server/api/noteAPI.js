@@ -5,10 +5,23 @@ const queries = require('../db/queries');
 const validNote = require('../lib/validations').validNote;
 const validId = require('../lib/validations').validId;
 
+// GET /notes?limit=10&start=1&order=asc
 router.get('/', (req, res) => {
-  queries.getAll().then(notes => {
-		  res.json(notes);
-  });
+  const limit = req.query.limit;
+  if (limit === undefined) {
+    queries.getAll()
+      .then(notes => {
+        res.json(notes);
+      });
+  } else {
+    const start = req.query.start || 1;
+    const order = req.query.order || 'desc';
+    //console.log('limit:' + limit + ';start:'+ start + ';order:' + order);
+    queries.getPage(limit, start, order)
+      .then(notes => {
+        res.json(notes);
+      });
+  }
 });
 
 router.get('/:id', (req, res) => {
